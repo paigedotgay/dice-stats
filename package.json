@@ -1,0 +1,19 @@
+{
+  "name": "dice-stats",
+  "version": "0.1.0",
+  "description": "Calculates various probabilities related to dice.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/qanazoga/dice-stats"
+  },
+  "keywords": [
+    "dice",
+    "statistics"
+  ],
+  "author": "qanazoga",
+  "license": "MIT"
+}
