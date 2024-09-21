@@ -2,9 +2,10 @@
 
 /** 
  * Returns the product of 1..n inclusively
- * @returns {number} Factorial of n
+ * @param {number} n 
+ * @returns {number} Factorial of `n`, 1 if `n` is 0
  */
-function factorial(n){
+function factorial(n) {
     let result = 1; 
     for (let i = 2; i <= n; i++) {
         result *= i;

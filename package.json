@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "github.com/qanazoga/dice-stats"
+    "url": "github.com/paigedotgay/dice-stats"
   },
   "keywords": [
     "dice",
     "statistics"
   ],
-  "author": "qanazoga",
+  "author": "paigedotgay",
   "license": "MIT"
 }
