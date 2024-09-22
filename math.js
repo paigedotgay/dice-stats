@@ -54,14 +54,14 @@ function binomialDistribution(p, r, n) {
  * // Remember, coins are just 2 sided dice.
  * const chance = calcChance(3, 1, 3, 2);
  * console.log(`${chance}% chance of success`);
- * // 16.25% chance of success
+ * // 12.5% chance of success
  */
 function calcChance(dice, winningSides=1, winsNeeded=1, sides=6) {
     //probability of rolling any given value.
     const probability = winningSides / sides; 
     
     // this first line is just range(winsNeeded, dice + 1)
-    return [...Array(winsNeeded).keys()].map( (i) => i + dice ) 
+    return [...Array(dice - winsNeeded + 1).keys()].map( (i) => i + winsNeeded ) 
         .map( (r) => binomialDistribution(probability, r, dice))
         .reduce( (pv, cv,) => pv + cv, 0) * 100
 }
