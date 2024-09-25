@@ -24,7 +24,9 @@ function factorial(n) {
 function binomialCoefficient(n, k) {
     return Array.isArray(n)
         ? binomialCoefficient(n.length, k)
-        : factorial(n) / (factorial(k) * factorial(n - k));
+        : factorial(n) 
+            / (factorial(k) 
+            * factorial(n - k));
 }
 
 /**
@@ -37,13 +39,15 @@ function binomialCoefficient(n, k) {
  * @returns {number} The probability of exactly `r` successes in `n` trials.
  */
 function binomialDistribution(p, r, n) {
-    return binomialCoefficient(n, r) * Math.pow(p, r) * Math.pow((1 - p), (n - r));
+    return binomialCoefficient(n, r) 
+        * Math.pow(p, r) 
+        * Math.pow((1 - p), (n - r));
 }
 /**
  * Calculates the probability of rolling a certain number of winning sides
  * with a specified number of dice and sides per die. Defaults to d6.
  *
- * @param {number} dice - The total number of dice being rolled.
+ * @param {number} diceCount - The total number of dice being rolled.
  * @param {number} [sides=6] - The number of sides on each die.
  * @param {number} [winningSides=1] - The number of winning sides on each die.
  * @param {number} [winsNeeded=1] - The number of winning rolls needed to achieve success.
@@ -56,12 +60,13 @@ function binomialDistribution(p, r, n) {
  * console.log(`${chance}% chance of success`);
  * // 12.5% chance of success
  */
-function calcChance(dice, winningSides=1, winsNeeded=1, sides=6) {
+function calcChance(diceCount, winningSides=1, winsNeeded=1, sides=6) {
     //probability of rolling any given value.
-    const probability = winningSides / sides; 
+    const winProbability = winningSides / sides; 
     
     // this first line is just range(winsNeeded, dice + 1)
-    return [...Array(dice - winsNeeded + 1).keys()].map( (i) => i + winsNeeded ) 
-        .map( (r) => binomialDistribution(probability, r, dice))
-        .reduce( (pv, cv,) => pv + cv, 0) * 100
+    return [...Array(diceCount - winsNeeded + 1).keys()].map( (i) => i + winsNeeded ) 
+        .map( (r) => binomialDistribution(winProbability, r, diceCount))
+        .reduce( (pv, cv,) => pv + cv, 0) 
+        * 100;
 }
