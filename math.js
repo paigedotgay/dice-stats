@@ -48,9 +48,9 @@ function binomialDistribution(p, r, n) {
  * with a specified number of dice and sides per die. Defaults to d6.
  *
  * @param {number} diceCount - The total number of dice being rolled.
- * @param {number} [sides=6] - The number of sides on each die.
  * @param {number} [winningSides=1] - The number of winning sides on each die.
  * @param {number} [winsNeeded=1] - The number of winning rolls needed to achieve success.
+ * @param {number} [sides=6] - The number of sides on each die.
  * @returns {number} The probability of achieving the required number of wins, expressed as a percentage.
  *
  * @example
