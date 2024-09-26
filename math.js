@@ -25,8 +25,7 @@ function binomialCoefficient(n, k) {
     return Array.isArray(n)
         ? binomialCoefficient(n.length, k)
         : factorial(n) 
-            / (factorial(k) 
-            * factorial(n - k));
+            / (factorial(k) * factorial(n - k));
 }
 
 /**
@@ -43,6 +42,7 @@ function binomialDistribution(p, r, n) {
         * Math.pow(p, r) 
         * Math.pow((1 - p), (n - r));
 }
+
 /**
  * Calculates the probability of rolling a certain number of winning sides
  * with a specified number of dice and sides per die. Defaults to d6.
